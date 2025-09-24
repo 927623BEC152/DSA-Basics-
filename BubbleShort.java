@@ -22,7 +22,7 @@ public class BubbleShort {
         for(int i=0;i<n;i++){
             System.out.println("Shorted Array : "+arr[i]);
         }
-
+sc.close();
     }
     
 }
