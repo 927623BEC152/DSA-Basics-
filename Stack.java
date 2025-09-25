@@ -21,6 +21,19 @@ public class Stack {
     boolean isFull() {
         return top == Size - 1;
     }
+     void pop() {
+    if (isEmpty()) {
+        System.out.println("Stack Underflow");
+    } else {
+        int poppedValue = stack[top];
+        top--;
+        System.out.println("Popped " + poppedValue + " from stack");
+    }
+}
+    boolean isEmpty(){
+        return top==-1;
+        }
+        
    
     public static void main(String[] args){
        // Scanner sc=new Scanner(System.in);
@@ -31,7 +44,8 @@ public class Stack {
         s.push(40);
         s.push(50);
         
-       
+       s.pop();
+      // s.peek();
     }
     
     }
