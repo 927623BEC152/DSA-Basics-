@@ -33,6 +33,13 @@ public class Stack {
     boolean isEmpty(){
         return top==-1;
         }
+        void peek(){
+            if(isEmpty()){
+                System.out.println("Stack is empty");
+            }else{
+                System.out.println("Top element is "+stack[top]);
+            }
+        }
         
    
     public static void main(String[] args){
@@ -45,7 +52,7 @@ public class Stack {
         s.push(50);
         
        s.pop();
-      // s.peek();
+       s.peek();
     }
     
     }
