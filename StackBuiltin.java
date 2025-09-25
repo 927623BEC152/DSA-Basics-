@@ -1,17 +1,17 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 public class StackBuiltin {
     public static void main(String[] args){
-        LinkedList <Integer> s = new LinkedList <> ();
-        s.push(10);
-        s.push(20);
-        s.push(30);
-        s.push(40);
-        s.push(50);
-        s.push(60);
+        ArrayList <Integer> s = new ArrayList <> ();
+        s.add(10);
+        s.add(20);
+        s.add(30);
+        s.add(40);
+        s.add(50);
+        s.add(60);
         System.out.println("Stack: " + s);
         System.out.println("Stack size: " + s.size());
-        System.out.println("Popped element: " + s.pop());
-        System.out.println("Top element: " + s.peek());
+        System.out.println("Popped element: " + s.remove(s.size() - 1));
+        System.out.println("Top element: " + s.get(s.size() - 1));
         System.out.println("Is stack empty? " + s.isEmpty());
         System.out.println("Stack size: " + s.size());
         System.out.println("Stack after pop: " + s);
