@@ -68,6 +68,7 @@ public class Stack {
         System.out.println(s.isEmpty());
         System.out.println(s.isFull());
         s.display();
+        
     }
     
     }
