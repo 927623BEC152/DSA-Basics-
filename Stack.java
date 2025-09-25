@@ -3,11 +3,12 @@ public class Stack {
     int top;
     int Size=5;
     int stack []=new int[Size];
-    Stack(){
+     Stack(){
         top=-1;
     }
     void push(int value){
-        if(isFull()){
+        if(isFull())  // if(top==Size-1)
+        {
             System.out.println("Stack Overflow");
         }
         else{
@@ -20,6 +21,7 @@ public class Stack {
     boolean isFull() {
         return top == Size - 1;
     }
+   
     public static void main(String[] args){
        // Scanner sc=new Scanner(System.in);
         Stack s=new Stack();
@@ -28,7 +30,7 @@ public class Stack {
         s.push(30);
         s.push(40);
         s.push(50);
-        s.push(60); 
+        
        
     }
     
