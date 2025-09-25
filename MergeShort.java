@@ -3,7 +3,7 @@ public class MergeShort {
 
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left + (right - left) / 2; //left+(right-1)/2
 
             mergeSort(arr, left, mid);
 
