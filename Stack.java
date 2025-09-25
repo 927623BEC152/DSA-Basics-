@@ -7,7 +7,7 @@ public class Stack {
         top=-1;
     }
     void push(int value){
-        if(top==Size-1){
+        if(isFull()){
             System.out.println("Stack Overflow");
         }
         else{
@@ -15,6 +15,10 @@ public class Stack {
             stack[top]=value;
             System.out.println("Pushed "+value+" to stack");
         }
+    }
+    
+    boolean isFull() {
+        return top == Size - 1;
     }
     public static void main(String[] args){
        // Scanner sc=new Scanner(System.in);
