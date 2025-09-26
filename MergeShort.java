@@ -1,67 +1,61 @@
 import java.util.*;
 public class MergeShort {
-
-    public static void mergeSort(int[] arr, int left, int right) {
-        if (left < right) {
-            int mid = left + (right - left) / 2; //left+(right-1)/2
-
-            mergeSort(arr, left, mid);
-
-            
-            mergeSort(arr, mid + 1, right);
-
-           
-            merge(arr, left, mid, right);
+    public static void mergeshort(int []arr,int low,int upper){
+        if(low<upper){
+            int mid=(low+upper)/2;
+             mergeshort(arr,low,mid);
+        mergeshort(arr,mid+1,upper);
+        merge (arr, low, mid, upper);
         }
     }
-
-    public static void merge(int[] arr, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
-
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-
-        for (int i = 0; i < n1; i++) L[i] = arr[left + i];
-        for (int i = 0; i < n2; i++) R[i] = arr[mid + 1 + i];
-
-        int i = 0, j = 0, k = left;
-
-
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
+       
+      public static void  merge (int []arr,int low,int mid,int upper){
+        int n=upper-low+1;
+        int [] b=new int[n];
+           int  i=low;
+           int  j=mid+1;
+           int  k=low;
+            while(arr[i]<=mid && arr[j] <=upper){
+                if(arr[i]<=arr[j]){
+                    b[k]=arr[i];
+                    i++;
+                    k++;
+                }else{
+                    b[k]=arr[j];
+                    i++;
+                    j++;
+                }
             }
-            k++;
+            if(i>mid){
+                while(j<=upper){
+                    b[k]=arr[j];
+                    j++;
+                    k++;
+                }
+            }else{
+                while(i<=mid){
+                    b[k]=arr[i];
+                    i++;
+                    k++;
+                }
+            }
+            for(k=low;k<=upper;k++){
+                arr[k]=b[k];
+            }
         }
-
-
-        while (i < n1) arr[k++] = L[i++];
-        while (j < n2) arr[k++] = R[j++];
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        System.out.println("Enter elements:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-
-        mergeSort(arr, 0, arr.length - 1);
-
-        for (int num : arr) {
-            System.out.print(num + " ");
+    
+        public static void main(String[] args){
+            Scanner sc= new Scanner(System.in);
+            int n=sc.nextInt();
+            int [] arr=new int [n];
+            for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+            }
+            mergeshort(arr,0,arr.length-1);
+            for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
         }
         sc.close();
+        }
     }
-}
-
-    
 
