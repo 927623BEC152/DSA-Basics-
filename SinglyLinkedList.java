@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class SinglyLinkedList {
     Node head;
 
     // Node class
@@ -68,7 +68,7 @@ public class Main {
 
     // main
     public static void main(String[] args) {
-        Main list = new Main();
+        SinglyLinkedList list = new SinglyLinkedList();
 
         list.insert(30);
         list.insert(20);
